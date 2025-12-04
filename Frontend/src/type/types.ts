@@ -5,7 +5,10 @@ export interface Project{
     stack: string[],
     details: string,
     images: string[],
-    repoLink: string[]
+    repoLink:{
+        label: string;
+        url: string;
+    }[],
 }
 
 export interface ProjectThumbnail{

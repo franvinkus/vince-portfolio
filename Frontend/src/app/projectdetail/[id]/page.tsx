@@ -13,7 +13,7 @@ const productQuery = `*[_type == "projects" && _id == $id][0]{
     stack, 
     details,
     "images": images[].asset->url,
-    "repoLink": repositoryLinks,
+    "repoLink": repoLink,
 }`;
 
 export default async function DetailProject({ params }: Prop){

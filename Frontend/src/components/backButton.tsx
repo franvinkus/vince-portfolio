@@ -5,10 +5,11 @@ import { useRouter } from "next/navigation";
 
 
 interface BackButtonProps{
-    onClick?: () => void;
+    onClick?: () => void,
+    string: string,
 }
 
-export default function BackButton({ onClick }: BackButtonProps){
+export default function BackButton({ onClick, string }: BackButtonProps){
 
     const router = useRouter();
 
@@ -36,7 +37,7 @@ export default function BackButton({ onClick }: BackButtonProps){
                     >
                         ← 
                     </motion.h1>
-                    <h1 > Abort Journey </h1>
+                    <h1 > {string} </h1>
                 </motion.div>
 
         </div>

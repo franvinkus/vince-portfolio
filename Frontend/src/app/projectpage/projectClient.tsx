@@ -56,7 +56,7 @@ export default function ProjectPage({ projects }: ProjectProps){
                 }}
                 >
                 
-                <BackButton onClick={() => setIsWarpBack(true)}/>
+                <BackButton onClick={() => setIsWarpBack(true)} string={"Abort Journey"}/>
 
             {projects.map((item, index) => {
                 const isEven = index % 2 === 0;

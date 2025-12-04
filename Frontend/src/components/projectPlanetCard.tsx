@@ -80,7 +80,7 @@ export default function projectPlanetCard(prop: ProjectProps){
               animate={`${isLaunched? "launching" : "visible"}`}
               onAnimationComplete={(launch) => {
                 if(launch==="launching"){
-                  router.push(`/projectdetail/${prop.items.id}`);
+                  router.push(`/projectdetail/${prop.items.id}?idx=${prop.index}`);
                 }
               }}
               />
