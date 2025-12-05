@@ -1,4 +1,3 @@
-import { substituteTokens } from "react-admin";
 import { defineField, defineType, Preview } from "sanity";
 
 export default defineType({
@@ -75,7 +74,7 @@ export default defineType({
                                 list: [
                                     {title: 'GitHub (Fullstack)', value: 'Fullstack'},
                                     {title: 'GitHub (Frontend)', value: 'Frontend'},
-                                    {title: 'GitHubg (Backend', value: 'Backend'},
+                                    {title: 'GitHub (Backend)', value: 'Backend'},
                                     {title: 'Figma Design', value: 'Figma'},
                                 ]
                             }

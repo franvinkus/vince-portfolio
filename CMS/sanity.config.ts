@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import projects from './schema/projects'
+import profile from './schema/profile'
 
 export default defineConfig({
   name: 'default',
@@ -13,6 +14,6 @@ export default defineConfig({
   plugins: [structureTool(), visionTool()],
 
   schema: {
-    types: [projects,],
+    types: [projects, profile],
   },
 })
