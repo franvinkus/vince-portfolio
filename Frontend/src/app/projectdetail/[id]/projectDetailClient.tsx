@@ -45,10 +45,10 @@ const exitVariants: Variants = {
     warpBack:{
         scale: 0.8,
         opacity: 0,
-        y: 100,
+        y: 500,
         filter: "blur(10px)",
         transition:{
-            duration: 0.5,
+            duration: 0.8,
             ease: "easeIn"
         }
     }
@@ -100,40 +100,41 @@ export default function DetailProjectClient({projects}:ProjectProps){
 
                 <div className="w-full h-full flex flex-col justify-between items-center pb-10 gap-10">
                     {/* Project Name */}
-                    <h1 className="text-6xl max-w-3xl text-white translate-y-10 hover:cursor-default"> {projects.name}</h1>
+                    <h1 className="text-6xl max-w-3xl text-white translate-y-5 hover:cursor-default"> {projects.name}</h1>
 
                     {/* Project Details */}
-                    <p className="w-350 text-xl text-gray-300 translate-y-5 hover:cursor-default"> {projects.details}</p>
+                    <p className="w-350 text-xl text-gray-300 hover:cursor-default"> {projects.details}</p>
 
                     {/* Project Images */}
-                    <div className="relative w-150 h-75 backdrop-blur-2xl group z-10">
-                        <div className="w-full h-full relative border-2 border-white rounded-xl p-8">
-                            <AnimatePresence mode="wait">
-                                <motion.img 
-                                src={projects.images[currentIndex]}
-                                className="w-full h-full object-contain"
-                                />
-                            </AnimatePresence>
+                    <div className="relative w-175 h-87.5 backdrop-blur-2xl group z-10 -mt-4">
+                        <div className="w-full h-full relative border-2 border-white rounded-xl p-4">
+                            <img 
+                            src={projects.images[currentIndex]}
+                            className="w-full h-full object-contain"
+                            />
                         </div>
-                        <button 
-                            onClick={handlePrev}
-                            disabled={currentIndex === 0}
-                            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                        >
-                            ←
-                        </button>
 
-                        <button 
-                            onClick={handleNext}
-                            disabled={currentIndex === projects.images.length -1}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                        >
-                            →
-                        </button>
+                        {currentIndex !== 0 && (
+                            <button 
+                                onClick={handlePrev}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                            >
+                                ←
+                            </button>
+                        )}
+
+                        {currentIndex !== projects.images.length - 1 && (
+                            <button 
+                                onClick={handleNext}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                            >
+                                →
+                            </button>
+                        )}
                     </div>
 
                     {/* Project Tech Stacks*/}
-                    <div className="flex flex-wrap gap-4 text-white z-10 hover:cursor-default">
+                    <div className="flex flex-wrap gap-4 text-white z-10 -mt-4 hover:cursor-default">
                         {projects.stack.map((stack, idx) => (
                             <span
                             className="px-4 border-2 border-white rounded-full bg-white/10 backdrop-blur-md"
@@ -144,7 +145,7 @@ export default function DetailProjectClient({projects}:ProjectProps){
                     </div>
 
                     {/* Project Links */}
-                    <div className="flex flex-wrap gap-4 z-10 text-white">
+                    <div className="flex flex-wrap gap-4 z-10 -mt-4 text-white">
                         {projects.repoLink.map((link, idx) => (
                             <a
                             className="px-4 border-2 border-white rounded-full bg-white/10 backdrop-blur-md"

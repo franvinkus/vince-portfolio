@@ -18,7 +18,7 @@ export default function BackButton({ onClick, string }: BackButtonProps){
             onClick();
         }
         else{
-            router.push("/");
+            router.back();
         }
     }
 
