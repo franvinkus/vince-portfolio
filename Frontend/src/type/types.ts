@@ -16,3 +16,17 @@ export interface ProjectThumbnail{
     name: string,
     thumbnail: string,
 }
+
+export interface Profile{
+    id: string, 
+    fullname: string,
+    headline: string,
+    fullbio: string,
+    picture: string,
+    email: string,
+    resume: string,
+    socials:{
+        label: string;
+        url: string;
+    }[]; 
+}

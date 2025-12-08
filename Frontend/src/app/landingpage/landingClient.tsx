@@ -1,8 +1,8 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import StarBackground from "../../components/StarBackground";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import StarBackground from "@/components/StarBackground";
 
 const sceneVariants: Variants = {
     hidden:{

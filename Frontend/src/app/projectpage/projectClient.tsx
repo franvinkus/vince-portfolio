@@ -6,6 +6,7 @@ import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import BackButton from "@/components/backButton";
+import Sun from "@/components/sun";
 
 
 interface ProjectProps{
@@ -37,13 +38,19 @@ export default function ProjectPage({ projects }: ProjectProps){
     const [isWarpBack, setIsWarpBack] = useState(false);
     const router = useRouter();
 
-    const handleClick = () => {
-        setIsWarpBack(true);
-    }
-
     return (
         <div className="w-full min-h-screen bg-[#050510] relative overflow-hidden">
             <StarBackground/>
+
+            <motion.div
+            className="fixed z-50 hover:cursor-pointer"
+            animate={{opacity: isWarpBack? 0 : 1}}
+            transition={{duration: 0.3}}
+            >
+                <BackButton onClick={() => setIsWarpBack(true)} string={"Abort Journey"}/>
+            </motion.div>
+
+            <Sun />
 
             <motion.div
                 variants={exitVariants}
@@ -54,9 +61,8 @@ export default function ProjectPage({ projects }: ProjectProps){
                         router.push('/');
                     }
                 }}
-                >
+            >
                 
-                <BackButton onClick={() => setIsWarpBack(true)} string={"Abort Journey"}/>
 
             {projects.map((item, index) => {
                 const isEven = index % 2 === 0;
@@ -68,6 +74,7 @@ export default function ProjectPage({ projects }: ProjectProps){
                     whileInView={{x: 0, opacity: 1}}
                     viewport={{once: true, margin: "-100px"}}
                     transition={{ease:"easeOut", duration:3}}
+                    className="mt-35"
                     >
                         <ProjectPlanetCard
                             index={index}
