@@ -6,33 +6,13 @@ import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { PLANET_STYLES } from "@/app/constants/styles";
 
 interface ProjectProps{
     projects: Project;
 }
 
-const planetStyles=[
-  {
-    gradient: "bg-linear-to-r from-blue-400 to-green-400",
-    shadow: "shadow-teal-600 shadow-[0_0_50px]",
-  },
-  {
-    gradient: "bg-linear-to-r from-red-400 to-yellow-600",
-    shadow: "shadow-amber-600 shadow-[0_0_50px]",
-  },
-  {
-    gradient: "bg-radial from-white to-blue-600 ",
-    shadow: "shadow-blue-300 shadow-[0_0_20px]",
-  },
-  {
-    gradient: "bg-linear-to-r from-amber-800 via-white to-amber-600  shadow-amber-800 ",
-    shadow: "shadow-white shadow-[0_0_50px]",
-  },
-  {
-    gradient: "bg-linear-to-r from-blue-500 to-purple-400",
-    shadow: "shadow-purple-800 shadow-[0_0_20px]",
-  },
-]
+const planetStyles= PLANET_STYLES;
 
 const exitVariants: Variants = {
     idle:{
@@ -48,7 +28,7 @@ const exitVariants: Variants = {
         y: 500,
         filter: "blur(10px)",
         transition:{
-            duration: 0.8,
+            duration: 0.4,
             ease: "easeIn"
         }
     }

@@ -30,3 +30,8 @@ export interface Profile{
         url: string;
     }[]; 
 }
+
+export type PlanetStyle = {
+  gradient: string;
+  shadow: string;
+};

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function StarBackground(){
+export default function WarpingBackground(){
 
     const [stars, setStars] = useState<{id: number; x: number; y: number; size: number; delay: number}[]>([]);
 
@@ -28,8 +28,8 @@ export default function StarBackground(){
                 style={{
                     left: `${index.x}%`,
                     top: `${index.y}%`,
-                    width: index.size,
-                    height: index.size,
+                    width: 100,
+                    height: 2,
                 }}
                 animate={{
                     opacity:[0.2, 0.8, 0.2],

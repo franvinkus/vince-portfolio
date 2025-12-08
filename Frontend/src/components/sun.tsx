@@ -10,6 +10,7 @@ const sceneVariants: Variants = {
         y:0,
         rotate:360,
         opacity: 1,
+        z:100,
         transition:{
             duration: 7,
             repeat: Infinity,
@@ -22,7 +23,7 @@ const sceneVariants: Variants = {
         scale: 15,
         rotate: 300,
         opacity: 0,
-        z: 1000,
+        z: 100,
         transition:{
             duration: 1,
             ease:"easeOut"

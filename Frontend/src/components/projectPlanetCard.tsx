@@ -3,35 +3,14 @@ import { motion, Variants } from "framer-motion";
 import Rocket from "./rocket";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { PLANET_STYLES } from "@/app/constants/styles";
 
 interface ProjectProps{
   items: ProjectThumbnail,
   index: number, 
 }
 
-const planetStyles=[
-  {
-    gradient: "bg-linear-to-r from-blue-400 to-green-400",
-    shadow: "shadow-teal-600 shadow-[0_0_50px]",
-  },
-  {
-    gradient: "bg-linear-to-r from-red-400 to-yellow-600",
-    shadow: "shadow-amber-600 shadow-[0_0_50px]",
-  },
-  {
-    gradient: "bg-radial from-white to-blue-600 ",
-    shadow: "shadow-blue-300 shadow-[0_0_20px]",
-  },
-  {
-    gradient: "bg-linear-to-r from-amber-800 via-white to-amber-600  shadow-amber-800 ",
-    shadow: "shadow-white shadow-[0_0_50px]",
-  },
-  {
-    gradient: "bg-linear-to-r from-blue-500 to-purple-400",
-    shadow: "shadow-purple-800 shadow-[0_0_20px]",
-  },
-]
-
+const planetStyles = PLANET_STYLES;
 
 export default function projectPlanetCard(prop: ProjectProps){
   

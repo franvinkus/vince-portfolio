@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import BackButton from "@/components/backButton";
 import Sun from "@/components/sun";
+import BlackHole from "@/components/blackhole";
 
 
 interface ProjectProps{
@@ -50,7 +51,13 @@ export default function ProjectPage({ projects }: ProjectProps){
                 <BackButton onClick={() => setIsWarpBack(true)} string={"Abort Journey"}/>
             </motion.div>
 
-            <Sun />
+            <motion.div
+            className="z-50 hover:cursor-pointer"
+            animate={{opacity: isWarpBack? 0 : 1}}
+            transition={{duration: 0.3}}
+            >
+                <Sun />
+            </motion.div>
 
             <motion.div
                 variants={exitVariants}
@@ -83,6 +90,15 @@ export default function ProjectPage({ projects }: ProjectProps){
                     </motion.div>
                 );
             })}
+
+            <div className="relative flex justify-center mt-35 -mb-30">
+                <h1 className="text-white text-4xl"> More Project Incoming</h1>
+            </div>
+
+            <div className=" relative -bottom-60 p-8 scale-200">
+                <BlackHole/>
+            </div>
+            
             </motion.div>
         </div>
     );
