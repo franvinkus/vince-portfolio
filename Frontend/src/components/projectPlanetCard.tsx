@@ -75,7 +75,9 @@ export default function projectPlanetCard(prop: ProjectProps){
                           src={prop.items.thumbnail} 
                           alt={prop.items.name}
                           priority={prop.isPriority}
-                          className="w-full h-full object-contain opacity-100 md:opacity-60 hover:opacity-100 transition-opacity duration-300" 
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          fill
+                          className=" object-contain opacity-100 md:opacity-60 hover:opacity-100 transition-opacity duration-300" 
                       />
                     </motion.div>
                 )}
