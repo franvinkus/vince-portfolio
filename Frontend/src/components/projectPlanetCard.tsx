@@ -4,10 +4,12 @@ import Rocket from "./rocket";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { PLANET_STYLES } from "@/app/constants/styles";
+import Image from "next/image";
 
 interface ProjectProps{
   items: ProjectThumbnail,
   index: number, 
+  isPriority: boolean;
 }
 
 const planetStyles = PLANET_STYLES;
@@ -69,9 +71,10 @@ export default function projectPlanetCard(prop: ProjectProps){
                     animate={{opacity: isLaunched? 0 : 1}}
                     transition={{duration: 0.5 }}
                     >
-                      <img
+                      <Image
                           src={prop.items.thumbnail} 
                           alt={prop.items.name}
+                          priority={prop.isPriority}
                           className="w-full h-full object-contain opacity-100 md:opacity-60 hover:opacity-100 transition-opacity duration-300" 
                       />
                     </motion.div>

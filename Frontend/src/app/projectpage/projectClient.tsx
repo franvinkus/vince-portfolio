@@ -57,6 +57,11 @@ export default function ProjectPage({ projects }: ProjectProps){
         duration : isMobile? 0.8 : 3,
     }
 
+    const StarBackground = dynamic(() => import("@/components/StarBackground"),{
+        ssr:false,
+        loading: () => <div className="fixed inset-0 bg-[#050510]" />
+    });
+
     return (
         <div className="w-full min-h-screen bg-[#050510] relative overflow-hidden">
             <StarBackground/>
