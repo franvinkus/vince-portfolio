@@ -56,7 +56,7 @@ export default function Sun(){
         initial={{x:1000, y:1000, opacity:0}}
         animate={{x:0, y:0, opacity: 1}}
         transition={{duration: 3, ease:"easeIn"}}
-        className="absolute -top-40 -right-20"
+        className="absolute -top-40 -right-20 md:-right-20"
         >
             <motion.div
             className={`relative h-80 w-80 bg-linear-to-br from-amber-500 bg-yellow-300 rounded-full`}
@@ -80,7 +80,7 @@ export default function Sun(){
             animate={`${isLaunching? "launching" : "idle"}`}
             onClick={() => setIsLaunching(true)}
             >
-                <h1 className="text-white text-3xl z-100">About Me</h1>
+                <h1 className="text-white text-4xl md:text-3xl z-100">About Me</h1>
                 <motion.h1 
                 className="relative text-white text-3xl left-5"
                 animate={{x: [0, 60, 0]}}

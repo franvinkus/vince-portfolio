@@ -50,7 +50,7 @@ export default function AboutMeClient({ profile }: ProfileProps){
     const router = useRouter();
 
     return(
-        <div className="w-full h-screen bg-[#050510] relative overflow-hidden">
+        <div className="w-full h-screen bg-[#050510] relative overflow-auto md:overflow-hidden">
             <motion.div 
             variants={variants}
             initial={"enter"}
@@ -72,45 +72,45 @@ export default function AboutMeClient({ profile }: ProfileProps){
                         <BackButton onClick={() => setIsWarpBack(true)} string={"Exit Star"}/>
                 </motion.div>
 
-                <div className="absolute flex top-3 right-3">
+                <div className="absolute flex top-20 right-15 md:top-10">
                     <motion.div
                     animate={{rotate:360}}
                     transition={{duration: 3, repeat: Infinity, ease:"linear"}}
-                    className={"w-100 h-100 bg-linear-to-r from-amber-600 to-yellow-400 rounded-full transform-3d shadow-amber-400 shadow-[0_0_30px]"}
+                    className={"w-50 h-50 bg-linear-to-r from-amber-600 to-yellow-400 rounded-full transform-3d shadow-amber-400 shadow-[0_0_30px] md:w-120 md:h-120"}
                     />
                 </div>
                 
-                <div className="h-full relative flex items-center top-5">
+                <div className="h-full relative flex items-center justify-center top-80 md:top-5">
 
                     {/* Card */}
-                    <div className="flex flex-col gap-y-5 relative left-25 border-3 border-white shadow-[0_0_30px_#ffffff] rounded-xl bg-black/50 backdrop-blur-md md:p-12">
+                    <div className="flex flex-col gap-y-5 relative md:left-3 border-3 border-white shadow-[0_0_20px_#ffffff] rounded-xl bg-black/50 backdrop-blur-md p-6 md:p-12 mt-10 md:mt-0">
 
-                        <div className="flex flex-row gap-x-10">
+                        <div className="flex flex-col md:flex-row md:gap-x-10 items-center md:items-start">
 
                             {/* Profile Picture */}
-                            <div className="w-52 h-90 flex items-center">
+                            <div className=" w-40 h-60 md:w-52 md:h-90 flex items-center justify-center">
                                 <img src={profile.picture} className="rounded-xl border-4 border-white shadow-[0_0_30px_#ffffff] hover:border-purple-400 hover:shadow-[0_0_40px_#8803fc]"/>
                             </div>
 
-                            <div className="flex flex-col gap-y-5 ">
+                            <div className="flex flex-col gap-y-5 items-center md:items-start">
 
-                                <div className="flex flex-row gap-x-5" >
+                                <div className="flex flex-col md:flex-row gap-x-5 gap-y-3 md:gap-y-0" >
                                     {/* Name */}
-                                    <p className="text-white text-4xl"> {profile.fullname} </p>
+                                    <p className="text-white text-2xl py-2 md:text-4xl"> {profile.fullname} </p>
 
                                     {/* Headline */}
-                                    <p className="px-6 py-1 text-white text-xl border-2 border-white rounded-xl hover:cursor-default bg-black/50 backdrop-blur-md"> {profile.headline} </p>
+                                    <p className="px-3 md:px-6 md:py-4 text-white text-sm md:text-xl border-2 border-white rounded-xl hover:cursor-default bg-black/50 backdrop-blur-md"> {profile.headline} </p>
                                 </div>
 
                                 {/* Bio */}
-                                <p className="text-white text-l max-w-240 whitespace-pre-line"> {profile.fullbio}</p>
+                                <p className="text-white text-l max-w-75 md:max-w-240 whitespace-pre-line"> {profile.fullbio}</p>
                             </div>
                         </div>
                         
-                        <div className="flex gap-4">
+                        <div className="flex flex-col md:flex-row gap-4">
 
                             {/* Email */}
-                            <p className="text-white text-l px-6 py-2"> Email: {profile.email}</p>
+                            <p className="text-white text-l md:px-6 py-2"> Email: {profile.email}</p>
 
                             {/* Socials */}
                             {profile.socials.map((social, idx) => (

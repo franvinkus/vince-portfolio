@@ -49,10 +49,10 @@ export default function projectPlanetCard(prop: ProjectProps){
 
     return(
       <div className={`flex  w-full p-20 ${isLaunched? "overflow-visible z-50" : "overflow-hidden"}`}>
-        <div className={`flex w-full h-full  ${isEven? "flex-row" : "flex-row-reverse"}`}>
+        <div className={`flex w-full h-full flex-col  ${isEven? "md:flex-row" : "md:flex-row-reverse"}`}>
           
-          <div className="flex justify-center w-1/2">
-            <div className="w-130 h-130 flex justify-center items-center p-10 relative">
+          <div className="flex justify-center md:w-1/2">
+            <div className={`w-80 h-80 flex justify-center items-center p-10 relative md:w-130 md:h-130 ${isEven? "-ml-30 md:ml-0" : "-mr-30 md:mr-0"}`}>
               <motion.div
               className={`absolute inset-0 rounded-full ${style.gradient} ${style.shadow}`}
               variants={sceneVariants}
@@ -72,22 +72,22 @@ export default function projectPlanetCard(prop: ProjectProps){
                       <img
                           src={prop.items.thumbnail} 
                           alt={prop.items.name}
-                          className="w-full h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300" 
+                          className="w-full h-full object-contain opacity-100 md:opacity-60 hover:opacity-100 transition-opacity duration-300" 
                       />
                     </motion.div>
                 )}
             </div>
           </div>
           
-          <div className={` text-white ${isEven? "text-left items-start" : "text-right items-end"}`}>
+          <div className={` text-white ${isEven? "text-left items-start -left-80 md:left-0" : "text-right items-end -right-80 md:right-0"}`}>
             <motion.h1 
-            className="relative top-30 text-3xl font-bold text-white mb-4 font-serif"
+            className="relative top-30 text-3xl font-bold text-white md:mb-4 font-serif"
             animate={{opacity: isLaunched? 0 : 1, x: isLaunched? (isEven? 1000 : -1000) : 0}}
             transition={{duration: 0.5 }}
             >
                 {prop.items.name}
             </motion.h1>
-            <div className={`flex items-center mt-72 gap-4 ${isEven? "flex-row" : "flex-row-reverse"}`}>
+            <div className={`flex items-center mt-32 md:mt-72 gap-4 ${isEven? "flex-row" : "flex-row-reverse"}`}>
               <motion.div 
               className={`relative scale-[0.3]  ${isEven? "-rotate-45" : "rotate-45"} hover:cursor-pointer ${isLaunched? "hover:cursor-none" : ""}`}
               onClick={() => handleButton()}>

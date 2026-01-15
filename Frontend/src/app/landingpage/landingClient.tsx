@@ -71,9 +71,9 @@ export default function landingpage(){
     }
 
     return (
-      <div className="flex h-screen w-full items-center justify-start bg-[#050510] pl-20 overflow-hidden">
+      <div className="flex h-screen w-full items-center justify-start bg-[#050510] overflow-hidden md:pl-40">
         <StarBackground/>
-        <div className=" relative z-10 perspective-midrange">
+        <div className=" relative z-10 perspective-midrange scale-60 -ml-20 md:scale-100">
             <motion.div
             variants={sceneVariants}
             initial="hidden"

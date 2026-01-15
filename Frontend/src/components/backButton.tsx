@@ -37,7 +37,7 @@ export default function BackButton({ onClick, string }: BackButtonProps){
                     >
                         ← 
                     </motion.h1>
-                    <h1 > {string} </h1>
+                    <h1 className="h-full w-25 md:w-50"> {string} </h1>
                 </motion.div>
 
         </div>
