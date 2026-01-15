@@ -16,6 +16,15 @@ const productQuery = `*[_type == "projects" && _id == $id][0]{
     "repoLink": repoLink,
 }`;
 
+export async function generateStaticParams(){
+    const query = `*[_type == "projects"]{ "_id": _id }`;
+    const projects = await sanityClient.fetch(query);
+
+    return projects.map((project: any) => ({
+        id: project._id, 
+    }));
+}
+
 export default async function DetailProject({ params }: Prop){
     const {id} = await params;
     
